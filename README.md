@@ -1,12 +1,33 @@
 # Constraint Diagnostic Skill
 
-A public-safe AI-agent skill for diagnosing the single constraint blocking an outcome.
+![Constraint Diagnostic hero](assets/constraint-diagnostic-hero.png)
 
-Preferred command:
+An AI-agent skill for finding the single constraint blocking an outcome, then turning it into one short experiment.
 
-`/constraint [situation]`
+Use it when a situation feels stuck and you need a clear diagnostic instead of a list of priorities.
 
-It works for:
+## Command
+
+```text
+/constraint [situation]
+```
+
+Aliases, if configured:
+
+```text
+/bottleneck [situation]
+/goldratt [situation]
+```
+
+## What it does
+
+- Checks whether there is enough context to diagnose
+- Runs a short interview only when context is missing
+- Identifies one constraint, not a priority list
+- Pushes back on fake bottlenecks
+- Produces a 7-day experiment and one metric
+
+## Works for
 
 - sales and business development
 - client acquisition
@@ -15,22 +36,7 @@ It works for:
 - content loops
 - AI agent workflows
 
-The skill does not assume enough context. It first checks whether the supplied context is enough, then either diagnoses immediately or asks a minimal interview.
-
-Output:
-
-- CONSTRAINT
-- WHY THIS ONE
-- CONFIDENCE
-- ASSUMPTIONS / MISSING CONTEXT
-- NOT THE CONSTRAINT
-- 7-DAY EXPERIMENT
-- METRIC
-- NEXT ACTION TODAY
-
-## Usage
-
-Paste or invoke:
+## Input template
 
 ```text
 /constraint
@@ -45,15 +51,40 @@ Question:
 
 You do not need to fill every field. The agent should ask only for missing context when needed.
 
+## Output format
+
+```text
+CONSTRAINT
+[One sentence naming the single constraint.]
+
+WHY THIS ONE
+[2-4 bullets using the chain, pile-up, lock-in test, and any numbers.]
+
+CONFIDENCE
+[High / Medium / Low] — [one sentence why]
+
+ASSUMPTIONS / MISSING CONTEXT
+[State assumptions or missing facts.]
+
+NOT THE CONSTRAINT
+[The tempting false bottleneck and why it is not primary.]
+
+7-DAY EXPERIMENT
+[One cheap test.]
+
+METRIC
+[One number to track.]
+
+NEXT ACTION TODAY
+[One concrete action.]
+```
+
 ## Files
 
-- `SKILL.md` — the actual skill
-- `README.md` — repo overview
-
-## Safety note
-
-This public version is generic by design. It does not include private workspace names, client details, credentials, personal operating-system references, or private examples.
+- `SKILL.md` — the skill instructions
+- `README.md` — this overview
+- `assets/constraint-diagnostic-hero.png` — README hero image
 
 ## License
 
-MIT. You can use, adapt, and share it.
+MIT. Use, adapt, and share it.

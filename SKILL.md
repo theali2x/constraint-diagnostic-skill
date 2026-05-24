@@ -235,7 +235,7 @@ Common constraints:
 - unclear ownership
 - no metric at each stage
 
-Keep client-facing language professional. Do not mention private memory or internal assumptions unless the user explicitly provides them in the current context.
+Keep client-facing language professional. Do not mention unstated context or background assumptions unless the user explicitly provides them in the current context.
 
 ### Personal / Life Constraint
 
@@ -334,7 +334,7 @@ For low confidence, the 7-day experiment should instrument the chain, not fix it
 
 If the user says this is for a client or asks for client-safe output:
 - remove user-specific references
-- remove internal stack references unless they are part of the client's context
+- remove implementation-stack references unless they are part of the client's context
 - use professional tone
 - call it `PRIMARY CONSTRAINT` instead of `CONSTRAINT` if useful
 - avoid blunt personal language unless explicitly requested
